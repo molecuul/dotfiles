@@ -1,0 +1,8 @@
+! urxvt*font: -*-creep-*-*-*-*-*-*-*-*-*-*-*-*
+urxvt*font: -*-lemon-*-*-*-*-*-*-*-*-*-*-*-*
+urxvt*boldFont:
+urxvt*depth: 32
+urxvt*scrollBar: false
+urxvt*background: [70]#000000
+urxvt*foreground: #FFFFFF
+urxvt*pointerBlank: true

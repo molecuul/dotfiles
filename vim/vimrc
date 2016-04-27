@@ -1,0 +1,9 @@
+syntax on
+
+colorscheme default
+
+set background=dark
+set laststatus=2
+
+let g:airline_theme = "dark"
+let g:airline_powerline_fonts = 0

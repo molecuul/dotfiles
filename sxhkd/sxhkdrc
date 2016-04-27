@@ -1,0 +1,95 @@
+super + Return
+	urxvt
+
+super + shift + Return
+	killall -s SIGUSR1 urxvtd && urxvtc
+
+super + shift + b
+	killall -s SIGUSR1 sxhkd
+
+super + e
+	bspc quit
+
+super + m
+	mumble -m
+
+super + c
+	vivaldi
+
+super + g
+	steam
+
+super + f
+	bspc node -t "~fullscreen"
+
+super + {Left, Right, Up, Down}
+	bspc node -f {west, east, north, south}
+
+super + shift + {Left, Right, Up, Down}
+	bspc node -p {west, east, north, south}
+
+super + shift + Escape
+	bspc node -p cancel
+
+super + shift + a
+	transset-df -a 0
+
+super + shift + c
+	bspc node -c
+
+super + shift + k
+	bspc node -k
+
+super + b
+	bspc desktop -B
+
+super + {1-9,0}
+	bspc desktop -f m{1-9,10}
+
+super + shift + {1-9,0}
+	bspc node -d m{1-9,0}
+
+super + {minus, equal}
+	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-, +} 5))
+
+super + shift + {comma, period}
+	bspc desktop -m {left, right} && bspc desktop -f last
+
+XF86AudioRaiseVolume
+	amixer sset 'Master' 5%+ && volnoti-show $(amixer sget 'Master' | grep -o '[0-9]*\%' | grep -o '[0-9]*')
+
+XF86AudioLowerVolume
+	amixer sset 'Master' 5%- && volnoti-show $(amixer sget 'Master' | grep -o '[0-9]*\%' | grep -o '[0-9]*')
+
+super + XF86AudioRaiseVolume
+	mpc -h localhost volume +5 && volnoti-show $(mpc -h localhost volume | grep -o '[0-9]*')
+
+super + XF86AudioLowerVolume
+	mpc -h localhost volume -5 && volnoti-show $(mpc -h localhost volume | grep -o '[0-9]*')
+
+super + XF86AudioPlay
+	mpc stop && mpc play
+
+super + XF86AudioStop
+	mpc stop
+
+super + z
+	amixer sset 'Rear Mic' toggle
+
+~button1
+	bspc pointer -g focus
+
+super + button{1-3}
+	bspc pointer -g {move,resize_side,resize_corner}
+
+super + !button{1-3}
+	bspc pointer -t %i %i
+
+super + @button{1-3}
+	bspc pointer -u
+
+super + t
+	bspc node -t "~floating"
+
+super + shift + s
+	bspc node -g sticky
