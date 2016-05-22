@@ -1,95 +1,147 @@
+# +--------------+
+# | applications |
+# +--------------+
+
 super + Return
-	urxvt
-
-super + shift + Return
-	killall -s SIGUSR1 urxvtd && urxvtc
-
-super + shift + b
-	killall -s SIGUSR1 sxhkd
-
-super + e
-	bspc quit
-
-super + m
-	mumble -m
-
-super + c
-	vivaldi
+	urxvtc
 
 super + g
 	steam
 
-super + f
-	bspc node -t "~fullscreen"
+super + s
+	spotify
 
-super + {Left, Right, Up, Down}
-	bspc node -f {west, east, north, south}
+super + c
+	qutebrowser
 
-super + shift + {Left, Right, Up, Down}
-	bspc node -p {west, east, north, south}
+super + a
+	aseprite
 
-super + shift + Escape
-	bspc node -p cancel
+super + y
+	audacity
 
-super + shift + a
-	transset-df -a 0
+super + m
+	mumble
 
-super + shift + c
-	bspc node -c
+super + t
+	atom
 
-super + shift + k
-	bspc node -k
+# +---------------------+
+# | music/audio control |
+# +---------------------+
 
-super + b
-	bspc desktop -B
+# mpd volume down
+super + Insert
+	mpc -h localhost volume -5
 
+# mpd volume up
+super + Prior
+	mpc -h localhost volume +5
+
+# mpd play
+super + Home
+	mpc -h localhost play
+
+# mpd stop
+super + shift + Home
+	mpc -h localhost stop
+
+# master volume down
+super + Delete
+	amixer sset 'Master' 5%-
+
+# master volume up
+super + Next
+	amixer sset 'Master' 5%+
+
+# master volume toggle
+super + End
+	amixer sset 'Master' toggle
+
+# microphone volume toggle
+super + shift + End
+	amixer sset 'Rear Mic' toggle
+
+# +---------------+
+# | bspwm control |
+# +---------------+
+
+# navigate desktops
 super + {1-9,0}
 	bspc desktop -f m{1-9,10}
 
+# navigate alt desktops
+super + ctrl + {1-9,0}
+	bspc desktop -f a{1-9,10}
+
+# navigate nodes
+super + {Left, Right, Up, Down}
+	bspc node -f {west,east,north,south}
+
+# split direction preselection
+super + shift + {Left, Right, Up, Down}
+	bspc node -p {west,east,north,south}
+
+# cancel preselection
+super + ctrl + Escape
+	bspc node -p cancel
+
+# close, kill nodes
+super + shift + {c,k}
+	bspc node -{c,k}
+
+# move node to desktop
 super + shift + {1-9,0}
-	bspc node -d m{1-9,0}
+	bspc node -d m{1-9,10}
 
-super + {minus, equal}
-	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-, +} 5))
+# move node to alt desktop
+super + shift + ctrl + {1-9,0}
+	bspc node -d a{1-9,10}
 
-super + shift + {comma, period}
-	bspc desktop -m {left, right} && bspc desktop -f last
+# toggle floating nodes
+super + shift + t
+	bspc node -t "~floating"
 
-XF86AudioRaiseVolume
-	amixer sset 'Master' 5%+ && volnoti-show $(amixer sget 'Master' | grep -o '[0-9]*\%' | grep -o '[0-9]*')
+# toggle sticky nodes
+super + shift + s
+	bspc node -g sticky
 
-XF86AudioLowerVolume
-	amixer sset 'Master' 5%- && volnoti-show $(amixer sget 'Master' | grep -o '[0-9]*\%' | grep -o '[0-9]*')
+# toggle fullscreen nodes
+super + shift + f
+	bspc node -t "~fullscreen"
 
-super + XF86AudioRaiseVolume
-	mpc -h localhost volume +5 && volnoti-show $(mpc -h localhost volume | grep -o '[0-9]*')
-
-super + XF86AudioLowerVolume
-	mpc -h localhost volume -5 && volnoti-show $(mpc -h localhost volume | grep -o '[0-9]*')
-
-super + XF86AudioPlay
-	mpc stop && mpc play
-
-super + XF86AudioStop
-	mpc stop
-
-super + z
-	amixer sset 'Rear Mic' toggle
-
+# focus node on click
 ~button1
 	bspc pointer -g focus
 
+# move, resize nodes
 super + button{1-3}
 	bspc pointer -g {move,resize_side,resize_corner}
 
-super + !button{1-3}
-	bspc pointer -t %i %i
-
+# finish resize, move on release
 super + @button{1-3}
 	bspc pointer -u
 
-super + t
-	bspc node -t "~floating"
+# exit bspwm
+super + shift + Escape
+	bspc quit
 
-super + shift + s
-	bspc node -g sticky
+# turn off compton
+super + shift + g
+	killall compton lemonbar bar.sh tail
+
+# restore compton
+super + shift + n
+	[ "$(pgrep compton)" = "" ] && compton
+
+# restore bar
+super + shift + b
+	[ "$(pgrep lemonbar)" = "" ] && $HOME/.bar
+
+# +---------------+
+# | misc. control |
+# +---------------+
+
+# reload sxhkd config
+super + Escape
+	pkill -USR1 sxhkd

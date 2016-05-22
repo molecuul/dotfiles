@@ -1,15 +1,16 @@
-#!/bin/bash
-# Initializes a primary monitor with some primary desktop and a secondary monitor with even more desktops.
+#!/bin/env bash
+# bspwm config
 
-DESKTOPS_MAIN="m1 m2 m3 m4 m5 m6 m7 m8 m9 m10"
-DESKTOPS_EXT="e1 e2 e3 e4 e5 e6 e7 e8 e9 e10"
+primary="DVI-D-0"
+desktops_primary="m1 m2 m3 m4 m5 m6 m7 m8 m9 m10"
+alternate="DVI-I-1"
+desktops_alternate="a1 a2 a3 a4 a5 a6 a7 a8 a9 a10"
 
-MONITOR_MAIN="DP-0"
-MONITOR_EXT="DVI-I-1"
-
+bspc config window_gap 16
 bspc config border_width 0
-bspc config window_gap 2
-bspc config -m $MONITOR_EXT top_padding 0
 
-bspc monitor $MONITOR_MAIN -n b -d $DESKTOPS_MAIN
-bspc monitor $MONITOR_EXT -n a -d $DESKTOPS_EXT
+bspc config -m $primary top_padding 40
+bspc config -m $primary bottom_padding 40
+
+bspc monitor $primary -d $desktops_primary
+bspc monitor $alternate -d $desktops_alternate

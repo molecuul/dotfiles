@@ -1,0 +1,20 @@
+#!/bin/bash
+# Sets the bar fonts
+
+font_primary="DejaVu Sans Mono-8"
+font_primary="Terminus-10"
+font_mono="Terminus-10"
+font_icon="Terminess Powerline-10"
+font_icon_alt="FontAwesome-12"
+
+function use_font_primary() {
+	echo -n "%{T1}"
+}
+
+function use_font_mono() {
+	echo -n "%{T2}"
+}
+
+function use_font_icon() {
+	echo -n "%{T3}"
+}

@@ -1,0 +1,41 @@
+#!/bin/env bash
+# Executed on desktop environment init.
+
+cur_path=$(dirname $(readlink -f $0))
+
+if [ -n "$game" ]; then
+	steam &
+	mumble &
+	feh --bg-fill "$cur_path/wallpapers_static/static1.jpg" &
+	sxhkd -c $cur_path/sxhkd/sxhkdrc &
+	bspwm -c $cur_path/bspwm/bspwmrc
+	exit 0
+fi
+
+# fix fonts
+xset +fp "$HOME/.fonts"
+xset fp rehash
+
+# set wallpaper
+feh --bg-fill "$cur_path/wallpapers_static/static1.jpg" &
+
+# start top bar
+$cur_path/bar/bar.sh top &
+
+# start bottom bar
+$cur_path/bar/bar.sh bottom &
+
+# prepare xresources
+xrdb "$cur_path/xorg/xresources"
+
+# start compositor
+compton &
+
+# urxvt daemon
+urxvtd &
+
+# sxhkd daemon
+sxhkd -c $cur_path/sxhkd/sxhkdrc &
+
+# wm process
+bspwm -c $cur_path/bspwm/bspwmrc
