@@ -51,7 +51,7 @@ super + shift + {Left, Right, Up, Down}
 	bspc node -p {west,east,north,south}
 
 super + {1-9,0}
-	bspc desktop -f m{1-9,10}
+	bspc desktop -f m{1-9,10} && pkill -usr1 info.sh
 
 super + shift + {1-9,0}
 	bspc node -d m{1-9,10}
