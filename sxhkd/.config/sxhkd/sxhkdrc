@@ -125,3 +125,16 @@ super + Home
 
 super + Prior
 	dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+
+# -------------------
+# audio key control
+# -------------------
+
+XF86AudioLowerVolume
+	amixer sset 'Master' 5%-
+
+XF86AudioRaiseVolume
+	amixer sset 'Master' 5%+
+
+XF86AudioMute
+	amixer sset 'Master' toggle
