@@ -1,3 +1,3 @@
-## improved dotfiles
+## dotfiles
 
-An installer script is included. It will back up any configuration files before overwriting them.
+All of my dotfiles have been completely redone to be formatted correctly with GNU stow.

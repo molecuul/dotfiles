@@ -1,0 +1,11 @@
+#!/bin/bash
+# bspwm config
+
+primary="DP-0"
+secondary="HDMI-0"
+
+bspc config window_gap 10
+bspc config border_width 0
+
+bspc monitor "$primary" -d m1 m2 m3 m4 m5 m6 m7 m8 m9 m10
+bspc monitor "$secondary" -d s1 s2 s3 s4 s5 s6 s7 s8 s9 s10

@@ -1,6 +1,0 @@
-#!/bin/bash
-# sets some color vars
-
-color_main="%{F#FFFFFFFF}%{B#00000000}"
-color_dark="%{F#77FFFFFF}%{B#00000000}"
-color_selected="%{F#FFFFFFFF}%{B#33FFFFFF}"
