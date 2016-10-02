@@ -10,6 +10,7 @@ xset +fp "$HOME/.fonts" && xset fp rehash &
 feh --bg-fill "$wall"
 
 xcompmgr &
+redshift 0.6:1.0 &
 
 if [ -n "$alt" ]; then
 	openbox
