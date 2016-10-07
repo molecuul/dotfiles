@@ -109,13 +109,13 @@ super + Escape
 # ---------------
 
 super + Delete
-	amixer sset 'Master' 5%-
+	amixer sset 'Master' 5%- && pkill -usr1 info.sh
 
 super + Next
-	amixer sset 'Master' 5%+
+	amixer sset 'Master' 5%+ && pkill -usr1 info.sh
 
 super + End
-	amixer sset 'Master' toggle
+	amixer sset 'Master' toggle && pkill -usr1 info.sh
 
 super + Insert
 	dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
@@ -138,3 +138,13 @@ XF86AudioRaiseVolume
 
 XF86AudioMute
 	amixer sset 'Master' toggle
+
+# --------------------
+# brightness control
+# --------------------
+
+XF86MonBrightnessDown
+	xbacklight -set $(($(xbacklight -get) - 5))
+
+XF86MonBrightnessUp
+	xbacklight -set $(($(xbacklight -get) + 5))
