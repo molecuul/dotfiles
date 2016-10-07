@@ -1,8 +1,9 @@
 urxvt*foreground: #FFFFFF
 urxvt*background: [75]#000000
 urxvt*depth: 32
+urxvt*letterSpace: -1
 
-urxvt*font: -*-lemon-*-*-*-*-*-*-*-*-*-*-*-*
+urxvt*font: -*-creep-*-*-*-*-*-*-*-*-*-*-*-*
 urxvt*boldFont:
 
 urxvt*scrollBar:
