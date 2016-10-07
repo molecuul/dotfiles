@@ -1,5 +1,5 @@
 urxvt*foreground: #FFFFFF
-urxvt*background: [75]#000000
+urxvt*background: [50]#000000
 urxvt*depth: 32
 urxvt*letterSpace: -1
 
