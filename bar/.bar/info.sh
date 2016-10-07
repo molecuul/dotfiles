@@ -15,12 +15,18 @@ get_datetime() {
 get_batinfo() {
 	batcur=$(acpi | cut -d ' ' -f 4 | grep -o '[0-9]*')
 	battime=$(acpi | cut -d ' ' -f 5)
+	batdischarging=$(acpi | grep 'Discharging')
+
+	batstatus="+"
+	[ -n "$batdischarging" ] && batstatus="-"
 
 	format_good
 	[ $batcur -lt 50 ] && format_default
 	[ $batcur -lt 30 ] && format_bad
 
-	echo -n " bat $batcur -> $battime "
+	[ ! "$battime" = "" ] && battime=" -> $battime"
+
+	echo -n " bat $batcur$batstatus$battime "
 }
 
 get_desktop() {
@@ -46,6 +52,19 @@ get_netinfo() {
 	format_default
 }
 
+get_volinfo() {
+	format_good
+
+	current_vol=$(amixer sget 'Master' | grep -o "[0-9]*\%" | head -n 1 | grep -o "[0-9]*")
+	current_muted=$(amixer sget 'Master' | grep off | head -n 1)
+
+	cur_state=$current_vol
+	[ -n "$current_muted" ] && cur_state="muted" && format_bad
+
+	echo -n " vol $cur_state "
+	format_default
+}
+
 get_music() {
 	cur="$(mpc current -f %title%)"
 	format_default
@@ -60,18 +79,12 @@ get_music() {
 	format_default
 }
 
-get_displaystate() {
-	cur="$(cat $rt/scripts/display_state)"
-	echo -n " display: $cur "
-}
-
 aggr() {
 	format_left
 	get_desktop
 	get_batinfo
-	get_music
+	get_volinfo
 	format_right
-	get_displaystate
 	get_netinfo
 	get_datetime
 }
