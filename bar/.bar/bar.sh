@@ -1,20 +1,9 @@
-#!/bin/env bash
-# executes the bar
+#!/bin/bash
+# bar init hold
 
-# get local path
-usepath=$(dirname $0)
+font_def="creep:pixelsize=12"
+font_icon="Siji:pixelsize=12"
+fg_def="#FF999999"
+bg_def="#77333333"
 
-# load vars
-source $usepath/vars.sh
-
-# try to not leave anyone laying around
-kill_all_jobs() { echo "terminating cleanly"; jobs -p | xargs kill; }
-trap kill_all_jobs SIGINT SIGSEGV
-
-lemonbar -F "#$color_fg_default" -B "#$color_bg_default" -f "$usefont" -g "$geometry" < $usepath/input.fifo &
-
-while :; do
-	$usepath/info.sh > $usepath/input.fifo
-done
-
-wait
+$(dirname $0)/info.sh | lemonbar -f "$font_def" -f "$font_icon" -F "$fg_def" -B "$bg_def"
