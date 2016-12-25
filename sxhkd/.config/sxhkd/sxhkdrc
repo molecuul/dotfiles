@@ -80,6 +80,9 @@ super + alt + {Left, Right}
 super + alt + {Up, Down}
 	bspc node @parent -r {-50,+50}
 
+super + ctrl + {Left, Right, Up, Down}
+	bspc node -v {-50 0, 50 0, 0 -50, 0 50}
+
 super + equal
 	bspc config -d focused window_gap $(($(bspc config -d focused window_gap) + 5))
 
