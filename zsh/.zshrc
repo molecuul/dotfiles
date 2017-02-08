@@ -10,3 +10,6 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR=vim
 alias ls='ls --color'
+
+# Just always use UTF8 because lang conf is fucked
+export LANG=en_US.UTF-8

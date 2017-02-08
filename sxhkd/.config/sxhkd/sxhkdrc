@@ -7,6 +7,9 @@
 super + Return
 	urxvt
 
+super + shift + Return
+	$HOME/.scripts/term_ext.sh
+
 super + backslash
 	terminator
 
