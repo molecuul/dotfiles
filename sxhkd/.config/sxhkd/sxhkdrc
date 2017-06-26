@@ -1,156 +1,36 @@
-# sxhkd config
-
-# --------------
-# applications
-# --------------
+super + shift + Escape
+	bspc quit
 
 super + Return
 	urxvt
 
-super + shift + Return
-	$HOME/.scripts/term_ext.sh
+# bspwm
 
-super + backslash
-	terminator
+super + {Left, Right, Up, Down}
+	bspc node -f {west, east, north, south}
 
-super + c
-	chromium
-
-super + m
-	mumble
-
-super + g
-	steam
-
-super + f
-	firefox
-
-super + s
-	spotify
-
-# --------------------------
-# misc application control
-# --------------------------
-
-# kill compositors for performance
-super + shift + g
-	pkill xcompmgr
-
-# restart compositors
-super + shift + n
-	xcompmgr
-
-# ------------
-# WM control
-# ------------
+super + shift + {Left, Right, Up, Down}
+	bspc node -p {west, east, north, south}
 
 super + shift + {c, k}
 	bspc node -{c,k}
 
-super + {Left, Right, Up, Down}
-	bspc node -f {west,east,north,south}
-
-super + shift + {Left, Right, Up, Down}
-	bspc node -p {west,east,north,south}
-
 super + {1-9,0}
-	bspc desktop -f m{1-9,10} && pkill -usr1 info.sh
+	bspc desktop -f m{1-9,10}
 
 super + shift + {1-9,0}
-	bspc node -d m{1-9,10}
+	bspc node -d m{1-9,0}
 
-super + ctrl + {1-9,0}
-	bspc desktop -f a{1-9,10}
-
-super + shift + ctrl + {1-9,0}
-	bspc node -d a{1-9,10}
+super + alt + {Left, Right, Up, Down}
+	bspc node @parent -r {-50,+50,-50,+50}
 
 super + shift + f
 	bspc node -t '~fullscreen'
 
-super + shift + t
-	bspc node -t '~floating'
-
-super + shift + b
-	bspc node @/ -B
-
-super + shift + r
-	bspc node @parent -R 90
-
-super + alt + {Left, Right}
-	bspc node @parent -r {-50,+50}
-
-super + alt + {Up, Down}
-	bspc node @parent -r {-50,+50}
-
-super + ctrl + {Left, Right, Up, Down}
-	bspc node -v {-50 0, 50 0, 0 -50, 0 50}
-
-super + equal
-	bspc config -d focused window_gap $(($(bspc config -d focused window_gap) + 5))
-
-super + minus
-	bspc config -d focused window_gap $(($(bspc config -d focused window_gap) - 5))
-
-super + button{1-3}
-	bspc pointer -g {move,resize_side,resize_corner}
-
-super + @button{1-3}
-	bspc pointer -u
-
-# ------------
-# misc WM control
-# ------------
-
-# kill bspwm
-super + shift + Escape
-	bspc quit
-
-# reload sxhkd
+# sxhkd
 super + Escape
 	pkill -usr1 sxhkd
 
-# ---------------
-# audio control
-# ---------------
-
-super + Delete
-	amixer sset 'Master' 5%- && pkill -usr1 info.sh
-
-super + Next
-	amixer sset 'Master' 5%+ && pkill -usr1 info.sh
-
-super + End
-	amixer sset 'Master' toggle && pkill -usr1 info.sh
-
-super + Insert
-	dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
-
-super + Home
-	dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-
-super + Prior
-	dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
-
-# -------------------
-# audio key control
-# -------------------
-
-XF86AudioLowerVolume
-	amixer sset 'Master' 5%-
-
-XF86AudioRaiseVolume
-	amixer sset 'Master' 5%+
-
-XF86AudioMute
-	amixer sset 'Master' toggle
-
-# --------------------
-# brightness control
-# --------------------
-
-XF86MonBrightnessDown
-	xbacklight -set $(($(xbacklight -get) - 5))
-
-XF86MonBrightnessUp
-	xbacklight -set $(($(xbacklight -get) + 5))
+# apps
+super + c
+	chromium

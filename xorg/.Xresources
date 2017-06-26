@@ -3,7 +3,6 @@ urxvt*background: [40]#222222
 urxvt*depth: 32
 urxvt*letterSpace: -2
 
-urxvt*font: -*-creep-*-*-*-*-*-*-*-*-*-*-*-*
 urxvt*boldFont:
 urxvt*italicFont:
 
