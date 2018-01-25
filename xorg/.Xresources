@@ -1,41 +1,45 @@
-urxvt*foreground: #FFFFFF
-urxvt*background: [40]#222222
 urxvt*depth: 32
-urxvt*letterSpace: -2
 
-urxvt*boldFont:
+! disable perl extensions cause slow
+urxvt*perl-ext:
+urxvt*perl-ext-common:
+
+! fonts
+urxvt*font: -kakwa-kakwafont-medium-r-normal--12-120-72-72-c-60-iso8859-1
+urxvt*boldFont: -kakwa-kakwafont-medium-r-bold--12-120-72-72-c-60-iso8859-1
 urxvt*italicFont:
+
+urxvt*letterSpace: 0
+urxvt*lineSpace: 0
 
 urxvt*scrollBar:
 urxvt*pointerBlank: true
-!Black
-*color0:           #4a4b4a
-*color8:           #696969
 
-!Red
-*color1:           #D7699A
-*color9:           #F5A2B5
+! colors
+urxvt*foreground: #FFFFFF
+urxvt*background: [80]#000000
 
-!Green
-*color2:           #80D468
-*color10:          #A3F2A0
-
-!Yellow
-*color3:           #D7A169
-*color11:          #F5CDA2
-
-!Blue
-*color4:           #6985D7
-*color12:          #A2C1F5
-
-!Magenta
-*color5:           #C86AD4
-*color13:          #D2A2F5
-
-!Cyan
-*color6:           #6FCCD1
-*color14:          #A0E9F2
-
-!White
-*color7:           #DBDCDC
-*color15:          #FDFDFD
+!black
+*color8:           #656565
+*color0:           #565656
+!red
+*color1:           #AC4F4F
+*color9:           #E85555
+!green
+*color2:           #88AB77
+*color10:          #8CCD6C
+!yellow
+*color3:           #D0D9AD
+*color11:          #C5D67D
+!blue
+*color4:           #677088
+*color12:          #647396
+!magenta
+*color5:           #CDCDB4
+*color13:          #CDB4C9
+!cyan
+*color6:           #445362
+*color14:          #505B6C
+!white
+*color7:           #FFFFFF
+*color15:          #C0C0C0
