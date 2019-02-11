@@ -1,11 +1,9 @@
-# dotfiles v2
-# zshrc
+# initialize zimfw
+export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+[[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh
 
-# zsh behavior
-set -J
+# terminal prompt
+export PS1=$'\e[0;36m[\e[0;39m%~\e[0;36m]── ─\e[0;39m '
 
 # aliases
-alias ls='ls --color -ah'
-
-# prompt
-export PS1="[%~]── ─ "
+alias vim='nvim'
