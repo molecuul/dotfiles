@@ -1,0 +1,54 @@
+# sxhkdrc
+# hotkey configuration
+
+# -- applications --
+
+# terminal
+super + Return
+    urxvt
+
+# browser
+super + q
+    google-chrome-stable
+
+# -- wm control --
+
+# node navigation
+super + {h, j, k, l}
+    bspc node -f {west, south, north, east}
+
+# node preselection
+super + shift + {h, j, k, l}
+    bspc node -p {west, south, north, east}
+
+# desktop navigation
+super + {1-9,0}
+    bspc desktop -f a{1-9,10}
+
+# send node to desktop
+super + shift + {1-9,0}
+    bspc node -d a{1-9,10}
+
+# end session
+super + shift + q
+    bspc quit
+
+# adjust ratio
+super + alt + {h, j, k, l}
+    bspc node @parent -r {-,+,-,+}50
+
+# reload hotkey config
+super + shift + b
+    pkill -usr1 sxhkd
+
+# rotate desktop
+super + shift + r
+    bspc node @focused:/ -R 90
+
+# close, kill apps
+super + shift + {c, k}
+    bspc node -{c,k}
+
+# toggle fullscreen
+super + f
+    bspc node -t "~fullscreen"

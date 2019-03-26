@@ -1,16 +1,17 @@
-! terminal fonts/spacing
-urxvt*font: -t-cherry-medium-r-normal--10-100-75-75-c-100-iso8859-1
+! urxvt settings 
+urxvt*font: xft:boxxy:pixelsize=10
 urxvt*boldFont:
-urxvt*letterSpace: -1
-
-! terminal behavior
+urxvt*letterSpace: 0
 urxvt*scrollBar: false
 urxvt*pointerBlank: true
+urxvt*depth: 32
 
-! dracula colors
+! rxvt-256color is often rejected
+urxvt*termName: xterm-256color
+
+! https://github.com/dracula/xresources
 *.foreground: #F8F8F2
-!*.background: #282A36
-*.background: #282828
+*.background: [70]#111111
 *.color0:     #000000
 *.color8:     #4D4D4D
 *.color1:     #FF5555

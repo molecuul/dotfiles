@@ -1,0 +1,13 @@
+#!/bin/sh
+# install helper
+
+which bash bspwm sxhkd feh xrdb xcompmgr polybar nvim vim tmux stow 1>/dev/null
+
+if [ $? -ne 0 ]; then
+    echo "Missing some programs. Please install them before proceeding."
+    exit 1
+fi
+
+for i in *; do
+    [ -d "$i" ] && (echo "installing $i dotfiles" && stow $i)
+done

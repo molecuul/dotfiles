@@ -7,4 +7,7 @@ Plug 'itchyny/lightline.vim'
 " linter
 Plug 'w0rp/ale'
 
+" colorschemes
+Plug 'flazz/vim-colorschemes'
+
 call plug#end()

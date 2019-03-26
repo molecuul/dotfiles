@@ -1,12 +1,23 @@
 #!/bin/env sh
 # xinitrc
 
+# set wallpaper
+feh --bg-fill $HOME/.res/images/purple.png &
+
+# start compositor
+xcompmgr &
+
 # prep fonts
-xset +fp /usr/share/fonts/cherry
-xset fp rehash
+(xset +fp $HOME/.res/fonts && xset fp rehash) &
 
 # load xdb
-xrdb $HOME/.Xresources
+xrdb $HOME/.Xresources &
+
+# start bar
+polybar main &
+
+# start hotkeys
+sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
 
 # start wm
-exec awesome
+bspwm -c $HOME/.config/bspwm/bspwmrc

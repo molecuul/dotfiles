@@ -2,7 +2,7 @@
 
 " statusline configuration
 let g:lightline = {
-	\ 'colorscheme': 'one',
+	\ 'colorscheme': 'seoul256',
 	\ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
 	\ 'subseparator': { 'left': '░', 'right': '░' },
 	\ }
