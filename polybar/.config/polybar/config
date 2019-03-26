@@ -31,15 +31,15 @@ border-color = #ffffff
 padding-left = 3
 padding-right = 3
 
-module-margin-left = 0
-module-margin-right = 0
+module-margin-left = 3
+module-margin-right = 3
 
 font-0 = boxxy:pixelsize=10;1
 font-1 = boxxy:pixelsize=10;1
 font-2 = Wuncon Siji:pixelsize=10;1
 
 modules-left = date filesystem
-modules-center = i3 
+modules-center = bspwm
 modules-right = xkeyboard memory cpu eth temperature
 
 tray-position = right
@@ -74,15 +74,40 @@ label-mounted = %mountpoint%: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
+[module/bspwm]
+type = internal/bspwm
+pin-workspaces = false
 
-label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+ws-icon-0 = a1;I
+ws-icon-1 = a2;II
+ws-icon-2 = a3;III
+ws-icon-3 = a4;IV
+ws-icon-4 = a5;V
+ws-icon-5 = a6;VI
+ws-icon-6 = a7;VII
+ws-icon-7 = a8;VIII
+ws-icon-8 = a9;IX
+ws-icon-9 = a10;X
+
+format = <label-state> <label-mode>
+
+label-focused = %icon%
+label-focused-foreground = #ccbbb0
+
+label-occupied = %icon%
+label-occupied-foreground = #aaa
+
+label-urgent = !%icon%!
+label-urgent-foreground = #833
+
+label-empty = %icon%
+label-empty-foreground = #888
+
+label-separator = |
+label-separator-padding = 1
+label-separator-foreground = #00000000
+
+label-fullscreen = f
 
 [module/cpu]
 type = internal/cpu
