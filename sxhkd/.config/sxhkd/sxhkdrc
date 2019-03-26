@@ -11,6 +11,10 @@ super + Return
 super + q
     google-chrome-stable
 
+# screengrab
+super + s
+    scrot -s
+
 # -- wm control --
 
 # node navigation
