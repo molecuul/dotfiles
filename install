@@ -1,13 +1,25 @@
 #!/bin/sh
 # install helper
 
-which bash bspwm sxhkd feh xrdb xcompmgr polybar nvim vim tmux stow scrot 1>/dev/null
+# check for applications
+which bash bspwm sxhkd feh xrdb xcompmgr polybar nvim vim tmux stow scrot google-chrome-stable 1>/dev/null
 
 if [ $? -ne 0 ]; then
     echo "Missing some programs. Please install them before proceeding."
     exit 1
 fi
 
+# check for fonts
+if [[ $(fc-list | grep -i siji | wc -l) = 0 ]]; then
+    echo "Missing siji font."
+    exit 1
+fi
+
+if [[ $(fc-list | grep -i boxxy | wc -l) = 0 ]]; then
+    echo "Missing boxxy font."
+    exit 1
+fi
+
 for i in *; do
-    [ -d "$i" ] && (echo "installing $i dotfiles" && stow $i)
+    [ -d "$i" ] && (echo "installing $i dotfiles" && stow -t $HOME $i)
 done
