@@ -15,6 +15,10 @@ super + q
 super + s
     scrot -s
 
+# screen lock
+super + l
+    i3lock-wrapper -fe
+
 # -- wm control --
 
 # node navigation
