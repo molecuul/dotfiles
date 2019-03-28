@@ -16,7 +16,7 @@ super + s
     scrot -s
 
 # screen lock
-super + l
+super + shift + l
     i3lock-wrapper -fe
 
 # -- wm control --
