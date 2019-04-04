@@ -38,7 +38,7 @@ font-0 = boxxy:pixelsize=10;1
 font-1 = boxxy:pixelsize=10;1
 font-2 = Wuncon Siji:pixelsize=10;1
 
-modules-left = date filesystem
+modules-left = date
 modules-center = bspwm
 modules-right = xkeyboard memory cpu eth temperature
 
@@ -73,6 +73,9 @@ mount-0 = /
 label-mounted = %mountpoint%: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
+
+format-prefix-foreground = #ff666666
+format-foreground = #ff444444
 
 [module/bspwm]
 type = internal/bspwm
@@ -149,7 +152,8 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = #ff666666
+format-foreground = #ff444444
 
 label = %date% %time%
 
