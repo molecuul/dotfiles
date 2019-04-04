@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/env sh
 # bspwm configuration
 
 bspc monitor '^1' -d a1 a2 a3 a4 a5

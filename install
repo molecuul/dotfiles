@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/env sh
 # install helper
 
 # check for applications
-which bash bspwm sxhkd feh xrdb xcompmgr polybar nvim vim tmux stow scrot google-chrome-stable i3lock-wrapper 1>/dev/null
+which zsh bash bspwm sxhkd feh xrdb xcompmgr polybar nvim vim tmux stow scrot google-chrome-stable i3lock-wrapper 1>/dev/null
 
 if [ $? -ne 0 ]; then
     echo "Missing some programs. Please install them before proceeding."
