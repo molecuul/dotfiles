@@ -79,7 +79,7 @@ format-foreground = #ff444444
 
 [module/bspwm]
 type = internal/bspwm
-pin-workspaces = false
+pin-workspaces = true
 
 ws-icon-0 = a1;I
 ws-icon-1 = a2;II
