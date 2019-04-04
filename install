@@ -23,3 +23,7 @@ fi
 for i in *; do
     [ -d "$i" ] && (echo "installing $i dotfiles" && stow -t $HOME $i)
 done
+
+# perform vim-plugged install
+echo "installing vim plugins"
+nvim +PlugInstall +q +q
