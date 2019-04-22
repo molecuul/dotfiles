@@ -15,7 +15,7 @@ if [[ $(fc-list | grep -i siji | wc -l) = 0 ]]; then
     exit 1
 fi
 
-if [[ $(fc-list | grep -i boxxy | wc -l) = 0 ]]; then
+if [[ $(fc-list | grep -i scientifica | wc -l) = 0 ]]; then
     echo "Missing boxxy font."
     exit 1
 fi

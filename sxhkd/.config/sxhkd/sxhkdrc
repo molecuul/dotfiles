@@ -5,7 +5,7 @@
 
 # terminal
 super + Return
-    urxvt
+    alacritty
 
 # browser
 super + q

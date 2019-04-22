@@ -2,7 +2,7 @@
 # xinitrc
 
 # set wallpaper
-feh --bg-fill $HOME/.res/images/purple.png &
+feh --bg-fill $HOME/.res/images/wall_color.png &
 
 # start compositor
 xcompmgr &

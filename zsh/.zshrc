@@ -1,7 +1,3 @@
-# initialize zimfw
-export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
-[[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh
-
 # terminal prompt
 export PS1=$'\e[0;36m[\e[0;39m%~\e[0;36m]── ─\e[0;39m '
 
@@ -10,3 +6,12 @@ alias vim='nvim'
 
 # gpg tty
 export GPG_TTY=$(tty)
+
+# colorful ls
+alias ls='ls --color'
+
+# colorful, sensible grep
+alias grep='grep --color=auto --exclude-dir=.git'
+
+# auto cd
+set -J

@@ -6,7 +6,7 @@ set guicursor=
 
 " enable syntax highlighting
 syntax on
-colorscheme default
+colorscheme ice_cold_code
 
 " don't show modes, already in the statusline
 set noshowmode

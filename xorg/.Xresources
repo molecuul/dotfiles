@@ -9,22 +9,78 @@ urxvt*depth: 32
 ! rxvt-256color is often rejected
 urxvt*termName: xterm-256color
 
-! https://github.com/dracula/xresources
-*.foreground: #F8F8F2
-*.background: [70]#111111
-*.color0:     #000000
-*.color8:     #4D4D4D
-*.color1:     #FF5555
-*.color9:     #FF6E67
-*.color2:     #50FA7B
-*.color10:    #5AF78E
-*.color3:     #F1FA8C
-*.color11:    #F4F99D
-*.color4:     #BD93F9
-*.color12:    #CAA9FA
-*.color5:     #FF79C6
-*.color13:    #FF92D0
-*.color6:     #8BE9FD
-*.color14:    #9AEDFE
-*.color7:     #BFBFBF
-*.color15:    #E6E6E6
+! xcolors.net : cloud
+! special
+*.foreground:   #e6ebe5
+*.background:   #191818
+*.cursorColor:  #e6ebe5
+
+! black
+*.color0:       #222827
+*.color8:       #5d6f74
+
+! red
+*.color1:       #d5a8e3
+*.color9:       #cd749c
+
+! green
+*.color2:       #9c75dd
+*.color10:      #63b0b0
+
+! yellow
+*.color3:       #9898ae
+*.color11:      #c0c0dd
+
+! blue
+*.color4:       #654a96
+*.color12:      #5786bc
+
+! magenta
+*.color5:       #625566
+*.color13:      #3f3442
+
+! cyan
+*.color6:       #a9d1df
+*.color14:      #849da2
+
+! white
+*.color7:       #e6ebe5
+*.color15:      #d9d6cf
+
+! special
+*.foreground:   #919191
+*.background:   #000000
+*.cursorColor:  #919191
+
+! black
+*.color0:       #303030
+*.color8:       #5e5e5e
+
+! red
+*.color1:       #0023c1
+*.color9:       #8781ff
+
+! green
+*.color2:       #3334a8
+*.color10:      #a095ff
+
+! yellow
+*.color3:       #1d2cb5
+*.color11:      #948bff
+
+! blue
+*.color4:       #4b468c
+*.color12:      #b2aafe
+
+! magenta
+*.color5:       #534f7d
+*.color13:      #bbb5eb
+
+! cyan
+*.color6:       #413d9a
+*.color14:      #aaa0ff
+
+! white
+*.color7:       #c6c6c6
+*.color15:      #ffffff
+
