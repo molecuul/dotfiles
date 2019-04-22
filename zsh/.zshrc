@@ -1,5 +1,5 @@
 # terminal prompt
-export PS1=$'\e[0;36m[\e[0;39m%~\e[0;36m]── ─\e[0;39m '
+export PS1=$'\e[1;34m[\e[1;37m%~\e[1;34m]── ─\e[0;39m '
 
 # aliases
 alias vim='nvim'
