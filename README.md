@@ -4,8 +4,7 @@
 
 ## screenshots
 
-![empty](https://raw.githubusercontent.com/molecuul/dotfiles/master/empty.png)
-![busy](https://raw.githubusercontent.com/molecuul/dotfiles/master/busy.png)
+![busy](https://raw.githubusercontent.com/molecuul/dotfiles/master/screen.png)
 
 ## install
 
