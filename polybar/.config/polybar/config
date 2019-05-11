@@ -2,10 +2,10 @@
 ; not too far off from the example configuration
 
 [colors]
-background = #001b0b10
+background = #1c1c1c
 background-alt = #10241016
-foreground = #ccbbb0
-foreground-alt = #b3a49a
+foreground = #e6ebe5
+foreground-alt = #a9d1df
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -14,7 +14,7 @@ alert = #bd2c40
 width = 100%
 height = 32
 offset-x = 4
-offset-y = 0
+offset-y = 6
 radius = 0.0
 fixed-center = true
 
@@ -39,7 +39,7 @@ font-0 = scientifica:pixelsize=10;1
 font-1 = scientifica:pixelsize=10;1
 font-2 = Siji:pixelsize=10;1
 
-modules-left = date
+modules-left = date spotify
 modules-center = bspwm
 modules-right = xkeyboard memory cpu eth temperature
 
@@ -63,6 +63,7 @@ label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
+label-indicator-foreground = ${colors.background}
 
 [module/filesystem]
 type = internal/fs
@@ -152,8 +153,7 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-prefix-foreground = #ff666666
-format-foreground = #ff444444
+format-prefix-foreground = ${colors.foreground-alt}
 
 label = %date% %time%
 
@@ -192,7 +192,6 @@ warn-temperature = 60
 
 format = <ramp> <label>
 format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
 
 label = %temperature-c%
 label-warn = %temperature-c%
@@ -202,6 +201,14 @@ ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format = <label>
+exec = python ~/.config/polybar/spotify.py -t 64 -f '{artist} - {song}'
 
 [settings]
 screenchange-reload = true
